@@ -1,0 +1,9 @@
+# Create a requirements.txt file in your repository root with these dependencies:
+streamlit==1.30.0
+pandas==2.0.3
+numpy==1.24.3
+matplotlib==3.7.2
+yfinance==0.2.35
+requests==2.31.0
+beautifulsoup4==4.12.2
+python-dotenv==1.0.0
