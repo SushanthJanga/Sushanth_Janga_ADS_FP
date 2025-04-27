@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 def install_packages():
-    packages = ['matplotlib', 'pandas', 'numpy', 'yfinance', 'requests', 'beautifulsoup4']
+    packages = ['matplotlib']
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
