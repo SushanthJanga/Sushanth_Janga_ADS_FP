@@ -9,6 +9,17 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+import os
+
+# Increase the inotify watches limit (this may not solve all deployment issues)
+# This is a workaround for the "inotify watch limit reached" error
+try:
+    # Only attempt this in environments where it might be needed and permitted
+    if os.path.exists('/proc/sys/fs/inotify/max_user_watches'):
+        os.system('echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p')
+except Exception as e:
+    # Don't let this crash the app
+    pass
 
 # Streamlit page configuration
 st.set_page_config(page_title="Stock Sentiment Analyzer", layout="wide")
