@@ -1,3 +1,16 @@
+import subprocess
+import sys
+
+def install_packages():
+    packages = ['matplotlib', 'pandas', 'numpy', 'yfinance', 'requests', 'beautifulsoup4']
+    for package in packages:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Call this function before importing the packages
+install_packages()
+
+
+
 import streamlit as st
 import pandas as pd
 import numpy as np
