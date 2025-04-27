@@ -1,14 +1,4 @@
-import subprocess
-import sys
-
-def install_packages():
-    packages = ['matplotlib']
-    for package in packages:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Call this function before importing the packages
-install_packages()
-
+!pip install matplotlib
 
 
 import streamlit as st
